@@ -1,0 +1,24 @@
+[user]
+    name = calclark
+    email = 38017245+calclark@users.noreply.github.com
+
+[alias]
+    c = commit
+    ch = checkout
+    cl = clone
+    b = branch
+    s = status
+    a = add
+    p = pull
+    ps = push
+    f = fetch
+    r = rebase
+    ri = rebase --interactive
+    l = log
+    d = diff
+
+[pull]
+    ff = only
+
+[init]
+    defaultBranch = main
