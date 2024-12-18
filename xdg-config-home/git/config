@@ -16,9 +16,14 @@
     ri = rebase --interactive
     l = log
     d = diff
+    re = restore
 
 [pull]
     ff = only
 
 [init]
     defaultBranch = main
+
+[diff]
+    algorithm = histogram
+
