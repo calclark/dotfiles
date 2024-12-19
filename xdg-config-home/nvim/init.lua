@@ -97,12 +97,11 @@ vim.fn.sign_define("DiagnosticSignHint", { text = "·" })
 vim.api.nvim_command("highlight Normal guifg=#FFFFFF, guibg=#000000")
 vim.api.nvim_command("highlight StatusLine guifg=#FFFFFF, guibg=#000000")
 
-require("lightspeed").setup({
-	ignore_case = true,
-	jump_to_unique_chars = false,
-	safe_labels = {},
-})
-vim.keymap.set("n", "s", "<Plug>Lightspeed_omni_s")
+vim.keymap.set("n", "s", "<Plug>(leap)")
+-- Disable auto-jump on first match.
+require('leap').opts.safe_labels = {}
+-- The below settings make Leap's highlighting closer to those in Lightspeed.
+vim.api.nvim_set_hl(0, 'LeapBackdrop', { link = 'Comment' }) -- or some grey
 
 local telescope = require("telescope")
 telescope.setup({

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -eux
+
+stow --restow --target=$HOME home
+stow --restow --target=$HOME/.config xdg-config-home
