@@ -41,6 +41,12 @@ vim.g.loaded_node_provider = 0
 vim.g.loaded_perl_provider = 0
 
 vim.api.nvim_command("syntax manual")
+vim.api.nvim_create_autocmd("BufEnter", {
+	group = vim.api.nvim_create_augroup("DisableTreesitter", {}),
+	callback = function(args)
+		vim.treesitter.stop(args.buf)
+	end,
+})
 
 vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
 vim.g.mapleader = " "
